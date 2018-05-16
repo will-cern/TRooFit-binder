@@ -18,5 +18,9 @@ USER atlas
 ENTRYPOINT ["/entrypoint.sh"]
 
 COPY . /code/src 
-RUN sudo chown -R atlas /code && mkdir /code/build && cd /code/build && source /home/atlas/release_setup.sh && cmake /code/src && make
-RUN echo 'source /code/build/x86*/setup.sh' >> /home/atlas/setup.sh
+RUN sudo chown -R atlas /code /home/atlas && \
+    mkdir /code/build && cd /code/build && \
+    source /home/atlas/release_setup.sh && \ 
+    cmake /code/src && \
+    make && \
+    echo 'source /code/build/x86*/setup.sh' >> /home/atlas/setup.sh
