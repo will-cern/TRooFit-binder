@@ -13,6 +13,9 @@ RUN chmod +x /entrypoint.sh
 RUN usermod -u 1000 atlas
 RUN find /home -user 500 -type f -exec chown -h atlas '{}' \;
 
+ENV AtlasProject AthAnalysis
+ENV AtlasVersion 21.2.26
+
 USER atlas
 
 ENTRYPOINT ["/entrypoint.sh"]
