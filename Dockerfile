@@ -25,6 +25,6 @@ RUN sudo chown -R atlas /code /home/atlas && \
     mkdir /code/build && cd /code/build && \
     source /home/atlas/release_setup.sh && \ 
     cmake /code/src && \
-    make && 
+    make && \
     cp /code/src/*.ipynb /home/atlas && \
     echo 'source /code/build/x86*/setup.sh' >> /home/atlas/setup.sh
