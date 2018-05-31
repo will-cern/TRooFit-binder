@@ -27,3 +27,5 @@ RUN sudo chown -R atlas /code /home/atlas && \
     cmake /code/src && \
     make && \
     echo 'source /code/build/x86*/setup.sh' >> /home/atlas/setup.sh
+
+WORKDIR /code/src
