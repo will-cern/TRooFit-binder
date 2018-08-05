@@ -1,4 +1,4 @@
-FROM atlas/athanalysis:21.2.26
+FROM atlas/athanalysis:21.2.38
 RUN echo bust cache
 RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/lcg/zeromq/4.1.6-b4186/x86_64-slc6-gcc62-opt/lib' >> /home/atlas/setup.sh 
 RUN source ~/release_setup.sh && pip install -U metakernel --user
@@ -14,7 +14,7 @@ RUN usermod -u 1000 atlas
 RUN find /home -user 500 -type f -exec chown -h atlas '{}' \;
 
 ENV AtlasProject AthAnalysis
-ENV AtlasVersion 21.2.26
+ENV AtlasVersion 21.2.38
 
 USER atlas
 
